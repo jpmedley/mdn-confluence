@@ -12,18 +12,18 @@ const argv = require('yargs')
       .option('fill-only', {
         type: 'boolean',
         alias: 'fo',
-        desc: `Whether or not to only add missing version information`,
+        desc: `Generate missing information only. Do not attempt to change other values.`,
         default: false,
       })
       .option('interfaces', {
         alias: 'i',
-        desc: `Comma-separated list of interfaces to generate JSON for; omit to include all interfaces`,
+        desc: `Comma-separated list of interfaces to generate JSON for. Omit to include all interfaces.`,
         default: '',
         coerce: iStr => iStr.split(',').filter(str => !!str),
       })
       .option('browsers', {
         alias: 'b',
-        desc: `Comma-separated list of browser namesinterfaces to generate JSON for; omit to include all browsers`,
+        desc: `Comma-separated list of browser names to generate JSON for. Omit to include all browsers.`,
         default: '',
         coerce: bStr => bStr.split(',').filter(str => !!str).map(str => str.toLowerCase()),
       })
